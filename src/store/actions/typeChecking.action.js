@@ -1,15 +1,16 @@
-import TypeCheckingApiService from '../../services/textService'
-import TypeCheckingConstants from '../constants/typeChecking.constants'
+import typeCheckingApiService from '../../services/textService'
+import typeCheckingConstants from '../constants/typeChecking.constants'
+import typeCheckingModel from '../../model/typeChecking'
 
 function initialTypingCheckingRequest() {
     return {
-      type: TypeCheckingConstants.getServerTextRequest,
+      type: typeCheckingConstants.getServerTextRequest,
       payload: {}
     };
 }
 function initialTypingCheckingSuccess(successResponse) {
     return {
-      type: TypeCheckingConstants.getServerTextSuccess,
+      type: typeCheckingConstants.getServerTextSuccess,
       payload: {
           response: successResponse
       }
@@ -17,7 +18,7 @@ function initialTypingCheckingSuccess(successResponse) {
 }
 function initialTypingCheckingFailure(errorObj) {
     return {
-      type: TypeCheckingConstants.getServerTextFail,
+      type: typeCheckingConstants.getServerTextFail,
       payload: {
           error: errorObj
       }
@@ -28,8 +29,9 @@ function fetchServerText() {
     return async (dispatch) => {
         try {
             dispatch(initialTypingCheckingRequest())
-            const response = await TypeCheckingApiService.getServerText()
-            dispatch(initialTypingCheckingSuccess(response))
+            const response = await typeCheckingApiService.getServerText()
+            const modifiedResponse = typeCheckingModel.transformServerResponse(response)
+            dispatch(initialTypingCheckingSuccess(modifiedResponse))
 
         } catch (err) {
             dispatch(initialTypingCheckingFailure(err))
