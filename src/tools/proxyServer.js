@@ -14,7 +14,7 @@ const cors = require("cors");
 
 const observerStagingProxy = proxy({
   // target: "https://pro-api-qa.sortly.co",
-  target: "https://pro-api-staging.sortly.co",
+  target: "http://www.randomtext.me",
   changeOrigin: true,
   logLevel: "debug"
 });
