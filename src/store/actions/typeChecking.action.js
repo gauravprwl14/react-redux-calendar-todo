@@ -32,7 +32,6 @@ function fetchServerText() {
             const response = await typeCheckingApiService.getServerText()
             const modifiedResponse = typeCheckingModel.transformServerResponse(response)
             dispatch(initialTypingCheckingSuccess(modifiedResponse))
-
         } catch (err) {
             dispatch(initialTypingCheckingFailure(err))
         }

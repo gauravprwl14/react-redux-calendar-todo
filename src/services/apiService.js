@@ -1,29 +1,8 @@
-// import axios from "axios";
+
 import httpStatus from "http-status";
-// import _ from "lodash";
 import fetch from "../core/fetch";
 import ApiConfigObj from "./apiConfig";
 
-function getAuthToken() {
-  let authToken = {};
-
-  if (localStorage.getItem("token")) {
-    const parsedTokenObj = JSON.parse(localStorage.getItem("token"));
-    authToken = {
-      ...parsedTokenObj
-    };
-  } else {
-    // authToken = {
-    //   Authorization: "a19fded7-1f7e-471a-a21e-72b392de169a",
-    //   SessionExpires: "2018-08-03T14:48:37.5807365+05:30"
-    // };
-    authToken = {
-      Authorization: "",
-      SessionExpires: ""
-    };
-  }
-  return authToken;
-}
 
 async function callApi(apiObject, resolver = null) {
   const fetchObject = {};

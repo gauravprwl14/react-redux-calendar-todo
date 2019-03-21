@@ -5,5 +5,5 @@ import typeCheckingReducer from './typeChecking.reducer'
 
 export default combineReducers({
   toastr: toastrReducer,
-  typeCheckingReducer
+  typeChecking: typeCheckingReducer
 });

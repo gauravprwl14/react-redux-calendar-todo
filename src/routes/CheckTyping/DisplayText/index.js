@@ -1,12 +1,11 @@
-import React { Component } from 'react'
+import React, { Component } from 'react'
 
 
 class DisplayText extends Component {
     render() {
         return (
             <div>
-
-
+                {this.props.textToDisplay}
             </div>
         )
     }

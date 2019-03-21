@@ -1,12 +1,12 @@
 import TypeCheckingConstants from '../constants/typeChecking.constants'
 const initialState = {
-    serverText: {},
+    masterData: {},
     isLoading: false,
-    serverTextError: '',
+    serverError: '',
 }
 
 
-const coachReducer = (state = initialState, action) => {
+const typeCheckingReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case TypeCheckingConstants.getServerTextRequest: {
@@ -19,16 +19,16 @@ const coachReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                serverText: action.payload.response,
-                serverTextError: ''
+                masterData: action.payload.response,
+                serverError: ''
             }
         }
         case TypeCheckingConstants.getServerTextFail: {
             return {
                 ...state,
                 isLoading: false,
-                serverText: {},
-                serverTextError: action.payload.error
+                masterData: {},
+                serverError: action.payload.error
             }
         }
         default: return state
@@ -36,4 +36,4 @@ const coachReducer = (state = initialState, action) => {
 
 }
 
-export default coachReducer
+export default typeCheckingReducer

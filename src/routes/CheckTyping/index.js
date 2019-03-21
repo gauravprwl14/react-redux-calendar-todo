@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 import typeCheckingActions from '../../store/actions/typeChecking.action'
+import DisplayText from './DisplayText'
 
 class CheckingTyping extends Component {
   componentDidMount() {
@@ -8,13 +10,19 @@ class CheckingTyping extends Component {
   }
   render() {
     return (
-      <div> test component </div>
+      <div>
+        <DisplayText 
+          textToDisplay={this.props.masterData.textStr}
+        />
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return {}
+  return {
+    masterData: _.get(state.typeChecking, ['masterData'], {})
+  }
 }
 function mapDispatchToProps(dispatch) {
   return {
