@@ -1,0 +1,75 @@
+@import "../../assets/styles/global";
+.notification{
+.card{
+	/* card copy 5: */
+background: #FFFFFF;
+box-shadow: -10px 15px 15px 0 rgba(30,30,30,0.05);
+height:90px;
+font-family: $fontHeader;
+letter-spacing: 1px;
+/*max-width: 1012px;*/
+margin-bottom:20px;
+margin-top:20px;
+.card-body{
+	height: 90px;
+    padding: 0;
+}
+.d-flex{
+	height:90px;
+	text-align:center;
+	i{
+		flex: 1 1 80px;
+		font-size:32px;
+		margin-left:-25px;
+		}
+	.boggie-detail{
+		flex: 1 1 168px;
+		font-size:16px;
+		font-weight:400;
+		text-transform: uppercase;
+		color:$text-light;
+
+		.text-capital{
+			color:#333333;
+			opacity:1;
+			font-size: 18px;
+		}
+		span{
+			font-size:14px;
+			color:$text-light;
+			opacity:0.6;
+		}
+	}
+	.description{
+		flex: 1 1 402px;
+		font-size: 16px;
+		color:$text-light;
+		opacity: 0.8;
+	}
+	.time-stamp{
+		flex: 1 1 173px;
+		position: relative;
+		font-size: 14px;
+		color:$text-light;
+		margin-left:25px;
+		opacity: 0.8;
+		i{
+			position: absolute;
+    left: 0px;
+    color:$blue;
+    font-size:20px;
+    margin-left:0;
+		}
+	}
+	.d-flex{
+		border-right:1px solid $borderColor;
+		padding-left:25px;
+		text-align: left;
+		&:last-child{
+			border:none;
+		}
+	}
+
+}
+}
+}

@@ -1,0 +1,315 @@
+@import "../../assets/styles/global";
+.train-status {
+  margin-left: auto;
+  height: 60px;
+  .icon {
+    height: 32px;
+    width: 69px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $blue;
+    font-size: 12px;
+    font-family: $secondaryFont;
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    .first{
+      width:35px;
+      text-align:right;
+    }
+    .sec{
+     width:35px;
+    }
+    &.dt {
+      background: url(./../../assets/images/train-icon/dt.png);
+    }
+    &.dt2 {
+      background: url(./../../assets/images/train-icon/dt1.png);
+    }
+    &.mi,
+    &.mi2,
+    &.mp,
+    &.mp2 {
+      background: url(./../../assets/images/train-icon/mp.png);
+    }
+  
+
+
+
+  // &.bogie1 {
+  //   .dt {
+  //     background: url(./../../assets/images/train-icon/dt-lfill.png);
+  //     .first {
+  //       color: #fff;
+  //     }
+  //   }
+  //   .mi,
+  //   .mi2,
+  //   .mp,
+  //   .mp2 {
+  //     background: url(./../../assets/images/train-icon/mp-lfill.png);
+  //     .first {
+  //       color: #fff;
+  //     }
+  //   }
+  // }
+  // &.bogie2 {
+  //   .dt {
+  //     background: url(./../../assets/images/train-icon/dt-rfill.png);
+  //     .sec {
+  //       color: #fff;
+  //     }
+  //   }
+  //   .mi,
+  //   .mi2,
+  //   .mp,
+  //   .mp2 {
+  //     background: url(./../../assets/images/train-icon/mp-rfill.png);
+  //     .sec {
+  //       color: #fff;
+  //     }
+  //   }
+  // }
+
+  // &.mi-coach,
+  // &.mi2-coach,
+  // &.mp-coach,
+  // &.mp2-coach {
+  //   .mp {
+  //     background: url(./../../assets/images/train-icon/mp-fill.png);
+  //     .first,
+  //     .sec {
+  //       color: #fff;
+  //     }
+  //   }
+  // }
+  // &.dt-coach {
+  //   .dt {
+  //     background: url(./../../assets/images/train-icon/dt-fill.png);
+  //     .first,
+  //     .sec {
+  //       color: #fff;
+  //     }
+  //   }
+  // }
+
+
+}
+
+  &.dt{
+    &.dt{
+      .dt{
+    background: url(./../../assets/images/train-icon/dt-fill.png);
+    a{
+      color:#fff;
+    }
+  }
+
+    }
+    &.bogie1{
+      .dt{
+      background: url(./../../assets/images/train-icon/dt-lfill.png);
+      .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+
+    }
+    &.bogie2{
+      .dt{
+      background: url(./../../assets/images/train-icon/dt-rfill.png);
+      .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+
+    }
+  }
+
+  &.dt2{
+    &.dt2{
+      .dt2{
+    background: url(./../../assets/images/train-icon/dt1-fill.png);
+    .first{
+        color:#fff;
+      }
+      .sec{
+        color:#fff;
+      }
+      }
+
+    }
+    &.bogie1{
+      .dt2{
+      background: url(./../../assets/images/train-icon/dt1-lfill.png);
+      .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+
+    }
+    &.bogie2{
+      .dt2{
+      background: url(./../../assets/images/train-icon/dt1-rfill.png);
+      .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+
+    }
+  }
+
+
+&.mp{
+    &.mp{
+      .mp{
+    background: url(./../../assets/images/train-icon/mp-fill.png);
+    a{
+      color:#fff;
+    }
+  }
+  }
+  &.bogie1{
+    .mp{
+       background: url(./../../assets/images/train-icon/mp-lfill.png);
+       .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+  }
+   &.bogie2{
+    .mp{
+       background: url(./../../assets/images/train-icon/mp-rfill.png);
+       .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+  }
+}
+
+&.mi{
+    &.mi{
+      .mi{
+    background: url(./../../assets/images/train-icon/mp-fill.png);
+     .first{
+        color:#fff;
+      }
+      .sec{
+        color:#fff;
+      }
+  }
+  }
+  &.bogie1{
+    .mi {
+       background: url(./../../assets/images/train-icon/mp-lfill.png);
+       .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+  }
+   &.bogie2{
+    .mi{
+       background: url(./../../assets/images/train-icon/mp-rfill.png);
+       .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+  }
+}
+
+&.mi2{
+    &.mi2{
+      .mi2{
+    background: url(./../../assets/images/train-icon/mp-fill.png);
+     .first{
+        color:#fff;
+      }
+      .sec{
+        color:#fff;
+      }
+  }
+  }
+  &.bogie1{
+    .mi2 {
+       background: url(./../../assets/images/train-icon/mp-lfill.png);
+       .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+  }
+   &.bogie2{
+    .mi2{
+       background: url(./../../assets/images/train-icon/mp-rfill.png);
+       .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+  }
+}
+&.mp2{
+    &.mp2{
+      .mp2{
+    background: url(./../../assets/images/train-icon/mp-fill.png);
+    a{
+      color:#fff;
+    }
+  }
+  }
+  &.bogie1{
+    .mp2{
+       background: url(./../../assets/images/train-icon/mp-lfill.png);
+       .first{
+        color:#fff;
+      }
+      .sec{
+        color:$blue;
+      }
+    }
+  }
+   &.bogie2{
+    .mp2{
+       background: url(./../../assets/images/train-icon/mp-rfill.png);
+       .first{
+        color:$blue;
+      }
+      .sec{
+        color:#fff;
+      }
+    }
+  }
+}
+}

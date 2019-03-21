@@ -1,0 +1,16 @@
+@import "../../assets/styles/global";
+.spinner {
+  text-align: center;
+  font-size: 500%;
+  color: $blue;
+}
+.datepicker-icon{
+	font-size: 20px;
+	margin-right: 5px;
+	position: relative;
+	top: 3px;
+	padding: 5px 10px;
+}
+.disable-cursor {
+  cursor: not-allowed;
+}
