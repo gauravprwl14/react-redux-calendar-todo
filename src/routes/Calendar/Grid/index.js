@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./styles.scss";
 
 const Col = props => {
-  return <div className="grid-col">{props.id} </div>;
+  return (
+    <div
+      className="grid-col"
+      onClick={e => props.handleDateClick(e, props.id)}
+      value={props.id}>
+      {props.id}{" "}
+    </div>
+  );
 };
 
 const Grid = props => {
@@ -18,7 +25,13 @@ const Grid = props => {
   return (
     <div className="grid-container">
       {colArr.map(col => {
-        return <Col key={col.id} id={col.id} />;
+        return (
+          <Col
+            key={col.id}
+            id={col.id}
+            handleDateClick={props.handleDateClick}
+          />
+        );
       })}
     </div>
   );
