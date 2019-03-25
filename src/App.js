@@ -3,13 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import AppLayout from "./containers/AppLayout";
 import { Provider } from "react-redux";
 import ReduxToastr from "react-redux-toastr";
-import "moment-timezone";
 import store from "./store/index";
-import moment from "moment";
-import appConstants from "./utils/appConstants";
 import "./App.css";
-
-moment.tz.setDefault(appConstants.appTimeZone);
 
 class App extends Component {
   render() {

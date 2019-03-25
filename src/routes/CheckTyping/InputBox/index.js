@@ -1,13 +1,8 @@
 
 import React, { useState, useEffect } from 'react'
 
-let getInitialValue = (searchStr) => {
-    console.log('%c inside getInitialValue ', 'background: aqua; color: black', searchStr);
-    return searchStr || ''
-}
-
 const InputBox = (props) => {
-    const [userTypedStr, setTypedStr] = useState(getInitialValue(props.searchStr))
+    const [userTypedStr, setTypedStr] = useState('')
     useEffect(() => {
         if (props.searchStr === null || props.searchStr === undefined) {
             setTypedStr('')
