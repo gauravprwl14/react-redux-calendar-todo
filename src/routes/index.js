@@ -1,8 +1,9 @@
-import CheckTyping from './CheckTyping'
+// import CheckTyping from './CheckTyping'
+import Calendar from './Calendar'
 const appRoutes = [
   {
     path: "/",
-    component: CheckTyping
+    component: Calendar
   },
 ];
 

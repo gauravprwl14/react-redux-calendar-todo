@@ -1,3 +1,4 @@
 {
-    "prettier.jsxBracketSameLine": true
+    "prettier.jsxBracketSameLine": true,
+    "editor.formatOnSave": true
 }
