@@ -12,6 +12,12 @@ const cors = require("cors");
 //   logLevel: "debug"
 // });
 
+// const observerStagingProxy = proxy({
+//   // target: "https://pro-api-qa.sortly.co",
+//   target: "http://www.randomtext.me",
+//   changeOrigin: true,
+//   logLevel: "debug"
+// });
 const observerStagingProxy = proxy({
   // target: "https://pro-api-qa.sortly.co",
   target: "http://www.randomtext.me",
