@@ -7,7 +7,8 @@ class Calendar extends React.Component {
     super(props);
     this.state = {
       dateObj: {},
-      selectedDate: {}
+      selectedDate: {},
+      selectedMonth: {}
     };
     // this.inputBoxRef = React.createRef();
   }
