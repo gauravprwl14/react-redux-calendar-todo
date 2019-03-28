@@ -5,10 +5,11 @@ const Item = props => {
 };
 
 const ListItems = props => {
+  //   console.log("%c props of ListItem ", "background: aqua; color: black", props);
   return (
     <div>
-      {props.data.length ? (
-        props.data.map((dataObj, index) => {
+      {props.dataObj && props.dataObj.data && props.dataObj.data.length ? (
+        props.dataObj.data.map((dataObj, index) => {
           return <Item key={index} text={dataObj.text} />;
         })
       ) : (

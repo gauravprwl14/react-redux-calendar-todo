@@ -4,7 +4,7 @@ import "./styles.scss";
 const Col = props => {
   return (
     <div
-      className="grid-col"
+      className={`grid-col ${props.active ? "active" : ""}`}
       onClick={e => props.handleDateClick(e, props.id)}
       value={props.id}>
       {props.id}{" "}
@@ -29,6 +29,7 @@ const Grid = props => {
           <Col
             key={col.id}
             id={col.id}
+            active={props.activeDate && props.activeDate.id === col.id}
             handleDateClick={props.handleDateClick}
           />
         );
