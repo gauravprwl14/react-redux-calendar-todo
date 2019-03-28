@@ -1,7 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
+import _ from "lodash";
+import appConstants from "../../utils/constant";
 import Grid from "./Grid";
 import InputBox from "./InputBox";
 import ListItem from "./ListItem";
+import SelectBox from "./SelectBox";
+
 class Calendar extends React.Component {
   constructor(props) {
     super(props);
@@ -12,41 +16,71 @@ class Calendar extends React.Component {
     };
     // this.inputBoxRef = React.createRef();
   }
+  getPath = (selectedMonth, selectedDate) => {
+    if (selectedMonth && selectedMonth.id && selectedDate && selectedDate.id) {
+      return `${selectedMonth.id}_${selectedDate.id}`;
+    }
+    return null;
+  };
   handleDateClick = (e, id) => {
     if (e) {
       e.preventDefault();
     }
-    const newDateObj = {
-      ...this.state.dateObj
-    };
-    if (!newDateObj[id]) {
-      newDateObj[id] = {
-        data: []
-      };
-    }
     this.setState({
-      selectedDate: { id },
-      dateObj: newDateObj
+      selectedDate: { id }
     });
   };
   handleAddBtnClick = (e, notes) => {
-    const dateId = this.state.selectedDate && this.state.selectedDate.id;
-    const particularDateObj = this.state.dateObj[dateId];
-    if (particularDateObj) {
-      const dataArr = [...particularDateObj.data, { text: notes }];
-      particularDateObj.data = dataArr;
-      const newDateObj = {
-        ...this.state.dateObj
-      };
-      newDateObj[dateId] = particularDateObj;
+    if (e) {
+      e.preventDefault();
+    }
+    const path = this.getPath(
+      this.state.selectedMonth,
+      this.state.selectedDate
+    );
+    if (!path) {
+      return null;
+    }
+    const newDateObj = {
+      ...this.state.dateObj
+    };
+    let particularDateObj = newDateObj[path];
+    // create new obj
+    if (!particularDateObj) {
+      particularDateObj = { data: [] };
+    }
+    const dataArr = [...particularDateObj.data, { text: notes }];
+    particularDateObj.data = dataArr;
+    newDateObj[path] = particularDateObj;
+    this.setState({
+      dateObj: newDateObj
+    });
+  };
+  handleMonthSelect = e => {
+    if (e) {
+      const selectedMonthId = e.target.value;
+      const monthObj = _.find(appConstants.monthList, obj => {
+        return obj.id === parseInt(selectedMonthId, 10);
+      });
       this.setState({
-        dateObj: newDateObj
+        selectedMonth: monthObj
       });
     }
   };
   render() {
+    const path = this.getPath(
+      this.state.selectedMonth,
+      this.state.selectedDate
+    );
     return (
       <div>
+        <div>
+          <SelectBox
+            selectList={appConstants.monthList}
+            onChange={this.handleMonthSelect}
+            selectedMonth={this.state.selectedMonth}
+          />
+        </div>
         <Grid
           noOfCol={31}
           handleDateClick={this.handleDateClick}
@@ -55,18 +89,14 @@ class Calendar extends React.Component {
         <div>
           <InputBox
             addBtnClick={this.handleAddBtnClick}
+            isDisabled={!path}
             // resetRef={this.inputBoxRef}
           />
         </div>
         <div>
+          <div> selected month: {this.state.selectedMonth.desc} </div>
           <div> selected Date: {this.state.selectedDate.id} </div>
-          {this.state.selectedDate &&
-            this.state.selectedDate.id &&
-            this.state.dateObj[this.state.selectedDate.id] && (
-              <ListItem
-                dataObj={this.state.dateObj[this.state.selectedDate.id]}
-              />
-            )}
+          {path && <ListItem dataObj={this.state.dateObj[path]} />}
         </div>
       </div>
     );
